@@ -13,29 +13,6 @@
       </label>
     </div>
   {{/each-in}}
-  <!-- {{#multiselect-checkboxes tagName="div" class="form-group" options=fileTree selection=selectedTopics as |topic isSelected|}}
-    <div class="checkbox">
-      <label>
-        {{input type="checkbox" checked=(mut isSelected)}}
-        {{topic.topicName}}
-      </label>
-    </div>
-  {{/multiselect-checkboxes}} -->
-  <!-- <button class="btn btn-primary" {{action "topicCheckboxDidChange"}}>Continue</button> -->
-  {{!
-  <div class="radio">
-    <label>
-      <input type="radio" name="demographic" value="Enterprise Employees">
-      Enterprise Employees
-    </label>
-  </div>
-  <div class="radio">
-    <label>
-      <input type="radio" name="demographic" value="People who are Homeless or Jobless">
-      People who are Homeless or Jobless
-    </label>
-  </div>
-  }}
 </form>
 {{#if shouldShowStep2}}
   <h2>Step 2</h2>
@@ -70,6 +47,6 @@
         </label>
       </div>
     {{/each}}
-    <button class="btn btn-primary" {{action 'doNothing'}}>Combine &amp; PDFs</button>
+    <button class="btn btn-primary" {{action 'doNothing'}}>Combine &amp; Download PDFs</button>
   </form>
 {{/if}}
