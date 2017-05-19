@@ -1,0 +1,75 @@
+<h2>Step 1</h2>
+
+<p class="lead">
+  Which topics would you like to present?
+</p>
+
+<form>
+  {{#each-in fileTree as |topic subTree|}}
+    <div class="checkbox">
+      <label>
+        {{input type="checkbox" name=topic change=(action "topicCheckboxDidChange")}}
+        {{topic}}
+      </label>
+    </div>
+  {{/each-in}}
+  <!-- {{#multiselect-checkboxes tagName="div" class="form-group" options=fileTree selection=selectedTopics as |topic isSelected|}}
+    <div class="checkbox">
+      <label>
+        {{input type="checkbox" checked=(mut isSelected)}}
+        {{topic.topicName}}
+      </label>
+    </div>
+  {{/multiselect-checkboxes}} -->
+  <!-- <button class="btn btn-primary" {{action "topicCheckboxDidChange"}}>Continue</button> -->
+  {{!
+  <div class="radio">
+    <label>
+      <input type="radio" name="demographic" value="Enterprise Employees">
+      Enterprise Employees
+    </label>
+  </div>
+  <div class="radio">
+    <label>
+      <input type="radio" name="demographic" value="People who are Homeless or Jobless">
+      People who are Homeless or Jobless
+    </label>
+  </div>
+  }}
+</form>
+{{#if shouldShowStep2}}
+  <h2>Step 2</h2>
+  <p class="lead">
+    Who are you presenting to?
+  </p>
+
+  <form>
+    {{#each-in demographicsTree as |demographic subTree|}}
+      <div class="radio">
+        <label>
+          {{input type="radio" name="selectedDemographic" value=demographic change=(action "selectedDemographicDidChange")}}
+          {{demographic}}
+        </label>
+      </div>
+    {{/each-in}}
+  </form>
+{{/if}}
+
+{{#if shouldShowStep3}}
+  <h2>Step 3</h2>
+  <p class="lead">
+    Which PDFs would you like to use?
+  </p>
+
+  <form>
+    {{#each pdfNames as |pdfName|}}
+      <div class="checkbox">
+        <label>
+          {{input type="checkbox" name=pdfName checked="checked"}}
+          <a {{action 'doNothing'}}>{{pdfName}}</a>
+        </label>
+      </div>
+    {{/each}}
+    <button class="btn btn-primary" {{action 'doNothing'}}>Combine &amp; PDFs</button>
+  </form>
+{{/if}}
