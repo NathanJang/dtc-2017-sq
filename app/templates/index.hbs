@@ -47,6 +47,16 @@
         </label>
       </div>
     {{/each}}
-    <button class="btn btn-primary" {{action 'doNothing'}}>Combine &amp; Download PDFs</button>
   </form>
+
+  <h2>Step 4</h2>
+  <p class="lead">
+    Serve and enjoy!
+  </p>
+  <p>
+    <button class="btn btn-primary" {{action 'doNothing'}}><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Combine &amp; Download Presentation PDFs</button>
+  </p>
+  <p>
+    <button class="btn btn-primary" {{action 'doNothing'}}><span class="glyphicon glyphicon-download" aria-hidden="true"></span> Combine &amp; Download Pre- and Post-Tests</button>
+  </p>
 {{/if}}
